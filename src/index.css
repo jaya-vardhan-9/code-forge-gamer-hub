@@ -5,60 +5,72 @@
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-/* Cyberpunk Gaming Portfolio Design System */
+/* Gaming-Inspired Portfolio Design System */
 
 @layer base {
   :root {
-    /* Light theme - Cyberpunk Professional */
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Light theme - Clean Professional with Gaming Accents */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 315 100% 65%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 180 100% 60%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 315 100% 65%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 46 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 207 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 46 100% 50%;
     --radius: 0.75rem;
     
-    /* Cyberpunk Gaming Colors */
-    --neon-pink: 315 100% 65%;
-    --neon-cyan: 180 100% 60%;
-    --neon-purple: 270 100% 70%;
-    --electric-blue: 210 100% 60%;
+    /* Gaming Color Palette */
+    --gaming-yellow: 46 100% 50%;
+    --gaming-blue: 207 100% 50%;
+    --gaming-green: 142 76% 36%;
+    --gaming-red: 0 100% 50%;
+    --gaming-purple: 271 100% 50%;
+    --glass-bg: 0 0% 100% / 0.1;
+    --neon-glow: 46 100% 50% / 0.3;
   }
 
   .dark {
-    /* Dark theme - Cyberpunk Night City */
-    --background: 240 10% 3.9%;
+    /* Dark theme - Gaming Night Mode */
+    --background: 0 0% 8%;
     --foreground: 0 0% 95%;
-    --card: 240 10% 3.9%;
+    --card: 0 0% 12%;
     --card-foreground: 0 0% 95%;
-    --popover: 240 10% 3.9%;
+    --popover: 0 0% 12%;
     --popover-foreground: 0 0% 95%;
-    --primary: 315 100% 65%;
-    --primary-foreground: 240 10% 3.9%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 95%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 180 100% 60%;
-    --accent-foreground: 0 0% 95%;
-    --destructive: 0 62.8% 30.6%;
+    --primary: 46 100% 55%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 207 100% 60%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 100% 60%;
     --destructive-foreground: 0 0% 95%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 315 100% 65%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 46 100% 55%;
+    
+    /* Gaming Dark Colors */
+    --gaming-yellow: 46 100% 55%;
+    --gaming-blue: 207 100% 60%;
+    --gaming-green: 142 76% 45%;
+    --gaming-red: 0 100% 60%;
+    --gaming-purple: 271 100% 60%;
+    --glass-bg: 0 0% 100% / 0.05;
+    --neon-glow: 46 100% 55% / 0.4;
   }
 }
 
@@ -73,35 +85,53 @@
 
 @layer components {
   .neon-glow {
-    @apply shadow-[0_0_20px_rgba(315,100%,65%,0.3)] border border-primary/30;
+    @apply shadow-[0_0_30px_hsl(var(--neon-glow))] border border-primary/30;
   }
   
   .gaming-badge {
-    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r from-primary/20 to-accent/20 text-primary border border-primary/30;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-primary/20 to-accent/20 text-primary border border-primary/30 backdrop-blur-sm;
   }
   
-  .tech-card {
-    @apply bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300;
+  .glass-card {
+    @apply bg-[hsl(var(--glass-bg))] backdrop-blur-xl border border-white/10 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300;
   }
   
-  .cyber-gradient {
-    @apply bg-gradient-to-r from-primary via-accent to-primary;
+  .liquid-glass {
+    @apply bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-2xl;
+  }
+  
+  .gaming-gradient {
+    @apply bg-gradient-to-r from-[hsl(var(--gaming-yellow))] via-[hsl(var(--gaming-blue))] to-[hsl(var(--gaming-green))];
   }
   
   .night-city-bg {
-    @apply bg-gradient-to-br from-background via-background to-primary/5;
+    background: 
+      radial-gradient(circle at 20% 50%, hsl(var(--gaming-blue))/0.1 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--gaming-yellow))/0.1 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, hsl(var(--gaming-green))/0.05 0%, transparent 50%),
+      hsl(var(--background));
   }
 }
 
-/* Custom animations */
+/* Enhanced animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-15px); }
 }
 
 @keyframes neon-pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(315, 100%, 65%, 0.2); }
-  50% { box-shadow: 0 0 30px rgba(315, 100%, 65%, 0.4); }
+  0%, 100% { 
+    box-shadow: 
+      0 0 20px hsl(var(--neon-glow)),
+      0 0 40px hsl(var(--neon-glow)),
+      0 0 60px hsl(var(--neon-glow));
+  }
+  50% { 
+    box-shadow: 
+      0 0 10px hsl(var(--neon-glow)),
+      0 0 20px hsl(var(--neon-glow)),
+      0 0 30px hsl(var(--neon-glow));
+  }
 }
 
 @keyframes slide-in-up {
@@ -115,21 +145,34 @@
   }
 }
 
+@keyframes glow-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }
 
 .animate-neon-pulse {
-  animation: neon-pulse 3s ease-in-out infinite;
+  animation: neon-pulse 4s ease-in-out infinite;
 }
 
 .animate-slide-in-up {
-  animation: slide-in-up 0.6s ease-out forwards;
+  animation: slide-in-up 0.8s ease-out forwards;
+}
+
+.animate-glow-rotate {
+  animation: glow-rotate 20s linear infinite;
 }
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -137,9 +180,9 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary/30 rounded-full;
+  @apply bg-gradient-to-b from-primary/50 to-accent/50 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary/50;
+  @apply from-primary/70 to-accent/70;
 }

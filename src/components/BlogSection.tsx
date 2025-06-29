@@ -7,30 +7,30 @@ import { ExternalLink, Calendar, Clock } from "lucide-react";
 export function BlogSection() {
   const blogPosts = [
     {
-      title: "From Zero to DevOps: My Journey",
-      excerpt: "How I transitioned from fresh graduate to DevOps enthusiast, with practical tips and resources.",
+      title: "From Zero to DevOps",
+      excerpt: "My journey from fresh graduate to DevOps with practical tips.",
       date: "2024-12-15",
       readTime: "5 min",
       tags: ["Career", "Learning"],
       featured: true
     },
     {
-      title: "Docker vs Podman: Beginner's View",
-      excerpt: "Container technologies compared from a student's perspective with real examples.",
+      title: "Docker vs Podman",
+      excerpt: "Container technologies compared from a beginner's view.",
       date: "2024-12-10",
       readTime: "4 min",
       tags: ["Containers", "Tools"]
     },
     {
-      title: "CI/CD Pipelines Like Game Levels",
-      excerpt: "How gaming logic helped me understand continuous integration and deployment.",
+      title: "CI/CD Like Game Levels",
+      excerpt: "How gaming logic helped me understand deployment pipelines.",
       date: "2024-12-05",
       readTime: "6 min",
       tags: ["CI/CD", "Gaming"]
     },
     {
-      title: "Kubernetes Networking Made Simple",
-      excerpt: "Breaking down complex K8s networking using easy-to-understand analogies.",
+      title: "Kubernetes Made Simple",
+      excerpt: "Breaking down K8s networking with easy analogies.",
       date: "2024-11-28",
       readTime: "7 min",
       tags: ["Kubernetes", "Networking"]
@@ -42,27 +42,27 @@ export function BlogSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="gaming-badge mb-4">
-            📝 Blog
+            Blog
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Sharing the <span className="text-primary">Journey</span>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            Sharing the <span className="text-gaming-purple">Journey</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From DevOps concepts to gaming-inspired tutorials. 
+            DevOps concepts and gaming-inspired tutorials. 
             Join me as I document what I learn and build.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {blogPosts.map((post, index) => (
-            <Card key={index} className={`tech-card group hover:scale-[1.02] transition-all duration-300 ${post.featured ? 'ring-2 ring-primary/20' : ''}`}>
+            <Card key={index} className={`glass-card group hover:scale-[1.02] transition-all duration-300 ${post.featured ? 'ring-2 ring-gaming-purple/30' : ''}`}>
               <CardHeader>
                 <div className="flex items-start justify-between mb-2">
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors line-clamp-2">
+                  <CardTitle className="text-xl group-hover:text-gaming-purple transition-colors line-clamp-2">
                     {post.title}
                   </CardTitle>
                   {post.featured && (
-                    <Badge className="bg-primary/20 text-primary border-primary/30 text-xs">
+                    <Badge className="bg-gaming-purple/20 text-gaming-purple border-gaming-purple/30 text-xs">
                       Featured
                     </Badge>
                   )}
@@ -88,13 +88,13 @@ export function BlogSection() {
                 
                 <div className="flex flex-wrap gap-2">
                   {post.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="secondary" className="text-xs">
+                    <Badge key={tagIndex} variant="secondary" className="text-xs bg-gaming-green/10 text-gaming-green border-gaming-green/20">
                       #{tag}
                     </Badge>
                   ))}
                 </div>
 
-                <Button variant="outline" size="sm" className="w-full group-hover:border-primary/50">
+                <Button variant="outline" size="sm" className="w-full group-hover:border-gaming-purple/50">
                   <ExternalLink className="mr-2 h-4 w-4" />
                   Read More
                 </Button>
@@ -104,14 +104,14 @@ export function BlogSection() {
         </div>
 
         <div className="text-center space-y-4">
-          <Button className="bg-cyber-gradient hover:opacity-90 text-white" asChild>
+          <Button className="bg-gaming-gradient hover:opacity-90 text-black font-semibold neon-glow" asChild>
             <a href="https://hashnode.com" target="_blank" rel="noopener noreferrer">
               <ExternalLink className="mr-2 h-5 w-5" />
               Visit My Blog
             </a>
           </Button>
           <p className="text-sm text-muted-foreground">
-            New posts weekly • DevOps insights and career tips
+            New posts weekly • DevOps insights and tips
           </p>
         </div>
       </div>

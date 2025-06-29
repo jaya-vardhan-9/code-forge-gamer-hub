@@ -57,10 +57,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				'neon-pink': 'hsl(var(--neon-pink))',
-				'neon-cyan': 'hsl(var(--neon-cyan))',
-				'neon-purple': 'hsl(var(--neon-purple))',
-				'electric-blue': 'hsl(var(--electric-blue))',
+				'gaming-yellow': 'hsl(var(--gaming-yellow))',
+				'gaming-blue': 'hsl(var(--gaming-blue))',
+				'gaming-green': 'hsl(var(--gaming-green))',
+				'gaming-red': 'hsl(var(--gaming-red))',
+				'gaming-purple': 'hsl(var(--gaming-purple))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -86,11 +87,15 @@ export default {
 				},
 				'float': {
 					'0%, 100%': { transform: 'translateY(0px)' },
-					'50%': { transform: 'translateY(-10px)' }
+					'50%': { transform: 'translateY(-15px)' }
 				},
 				'neon-pulse': {
-					'0%, 100%': { boxShadow: '0 0 20px rgba(315, 100%, 65%, 0.2)' },
-					'50%': { boxShadow: '0 0 30px rgba(315, 100%, 65%, 0.4)' }
+					'0%, 100%': { 
+						boxShadow: '0 0 20px hsl(var(--neon-glow)), 0 0 40px hsl(var(--neon-glow))' 
+					},
+					'50%': { 
+						boxShadow: '0 0 10px hsl(var(--neon-glow)), 0 0 20px hsl(var(--neon-glow))' 
+					}
 				},
 				'slide-in-up': {
 					'from': {
@@ -101,18 +106,23 @@ export default {
 						opacity: '1',
 						transform: 'translateY(0)'
 					}
+				},
+				'glow-rotate': {
+					'from': { transform: 'rotate(0deg)' },
+					'to': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'float': 'float 6s ease-in-out infinite',
-				'neon-pulse': 'neon-pulse 3s ease-in-out infinite',
-				'slide-in-up': 'slide-in-up 0.6s ease-out forwards'
+				'float': 'float 8s ease-in-out infinite',
+				'neon-pulse': 'neon-pulse 4s ease-in-out infinite',
+				'slide-in-up': 'slide-in-up 0.8s ease-out forwards',
+				'glow-rotate': 'glow-rotate 20s linear infinite'
 			},
 			backgroundImage: {
-				'cyber-gradient': 'linear-gradient(135deg, hsl(315 100% 65%), hsl(180 100% 60%))',
-				'night-gradient': 'linear-gradient(135deg, hsl(240 10% 3.9%), hsl(315 100% 65% / 0.1))',
+				'gaming-gradient': 'linear-gradient(135deg, hsl(var(--gaming-yellow)), hsl(var(--gaming-blue)), hsl(var(--gaming-green)))',
+				'night-gradient': 'radial-gradient(circle at 20% 50%, hsl(var(--gaming-blue))/0.1 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(var(--gaming-yellow))/0.1 0%, transparent 50%)',
 			}
 		}
 	},
