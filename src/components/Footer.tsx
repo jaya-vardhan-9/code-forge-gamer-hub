@@ -8,7 +8,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center space-x-2">
             <Terminal className="h-5 w-5 text-primary" />
-            <span className="font-mono font-bold">DevOps.Dev</span>
+            <span className="font-mono font-bold">YN.dev</span>
           </div>
           
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -18,13 +18,13 @@ export function Footer() {
           </div>
 
           <div className="text-sm text-muted-foreground">
-            © 2024 • Always learning, always building
+            © 2024 • Always building, always learning
           </div>
         </div>
         
         <div className="mt-8 pt-8 border-t border-border/50 text-center">
           <p className="text-xs text-muted-foreground">
-            "The best way to predict the future is to build it" - and I'm just getting started.
+            "The future belongs to those who build it" - and the journey has just begun.
           </p>
         </div>
       </div>

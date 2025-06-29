@@ -7,33 +7,33 @@ import { ExternalLink, Calendar, Clock } from "lucide-react";
 export function BlogSection() {
   const blogPosts = [
     {
-      title: "From Zero to DevOps: My Learning Journey",
-      excerpt: "A comprehensive guide on how I transitioned from a fresh graduate to a DevOps enthusiast, including resources and practical tips.",
+      title: "From Zero to DevOps: My Journey",
+      excerpt: "How I transitioned from fresh graduate to DevOps enthusiast, with practical tips and resources.",
       date: "2024-12-15",
-      readTime: "8 min read",
-      tags: ["Career", "Learning", "DevOps"],
+      readTime: "5 min",
+      tags: ["Career", "Learning"],
       featured: true
     },
     {
-      title: "Docker vs Podman: A Beginner's Perspective",
-      excerpt: "Comparing container technologies from a student's viewpoint, with practical examples and performance benchmarks.",
+      title: "Docker vs Podman: Beginner's View",
+      excerpt: "Container technologies compared from a student's perspective with real examples.",
       date: "2024-12-10",
-      readTime: "6 min read",
-      tags: ["Docker", "Podman", "Containers"]
+      readTime: "4 min",
+      tags: ["Containers", "Tools"]
     },
     {
-      title: "Building CI/CD Pipelines Like Game Levels",
-      excerpt: "How gaming logic helped me understand continuous integration concepts and build better deployment strategies.",
+      title: "CI/CD Pipelines Like Game Levels",
+      excerpt: "How gaming logic helped me understand continuous integration and deployment.",
       date: "2024-12-05",
-      readTime: "10 min read",
-      tags: ["CI/CD", "Gaming", "Pipeline"]
+      readTime: "6 min",
+      tags: ["CI/CD", "Gaming"]
     },
     {
-      title: "Kubernetes Networking: Explained Simply",
-      excerpt: "Breaking down complex K8s networking concepts using analogies that actually make sense to beginners.",
+      title: "Kubernetes Networking Made Simple",
+      excerpt: "Breaking down complex K8s networking using easy-to-understand analogies.",
       date: "2024-11-28",
-      readTime: "12 min read",
-      tags: ["Kubernetes", "Networking", "Tutorial"]
+      readTime: "7 min",
+      tags: ["Kubernetes", "Networking"]
     }
   ];
 
@@ -42,14 +42,14 @@ export function BlogSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="gaming-badge mb-4">
-            📝 Blog & Insights
+            📝 Blog
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Sharing the <span className="text-primary">Learning Journey</span>
+            Sharing the <span className="text-primary">Journey</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From complex DevOps concepts to gaming-inspired tutorials, I write about 
-            what I learn and how I apply it. Join me in this continuous learning adventure.
+            From DevOps concepts to gaming-inspired tutorials. 
+            Join me as I document what I learn and build.
           </p>
         </div>
 
@@ -72,8 +72,7 @@ export function BlogSection() {
                     <Calendar className="h-4 w-4" />
                     {new Date(post.date).toLocaleDateString('en-US', { 
                       month: 'short', 
-                      day: 'numeric',
-                      year: 'numeric'
+                      day: 'numeric'
                     })}
                   </div>
                   <div className="flex items-center gap-1">
@@ -97,7 +96,7 @@ export function BlogSection() {
 
                 <Button variant="outline" size="sm" className="w-full group-hover:border-primary/50">
                   <ExternalLink className="mr-2 h-4 w-4" />
-                  Read on Hashnode
+                  Read More
                 </Button>
               </CardContent>
             </Card>
@@ -105,14 +104,14 @@ export function BlogSection() {
         </div>
 
         <div className="text-center space-y-4">
-          <Button className="bg-tech-gradient hover:opacity-90 text-white" asChild>
+          <Button className="bg-cyber-gradient hover:opacity-90 text-white" asChild>
             <a href="https://hashnode.com" target="_blank" rel="noopener noreferrer">
               <ExternalLink className="mr-2 h-5 w-5" />
-              Visit My Blog on Hashnode
+              Visit My Blog
             </a>
           </Button>
           <p className="text-sm text-muted-foreground">
-            New posts every week • Subscribe for DevOps insights and career tips
+            New posts weekly • DevOps insights and career tips
           </p>
         </div>
       </div>

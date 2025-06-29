@@ -21,7 +21,7 @@ export function Navigation() {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Terminal className="h-6 w-6 text-primary" />
-            <span className="font-mono font-bold text-xl">DevOps.Dev</span>
+            <span className="font-mono font-bold text-xl">YN.dev</span>
           </div>
 
           {/* Desktop Navigation */}

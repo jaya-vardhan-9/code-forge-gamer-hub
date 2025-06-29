@@ -1,23 +1,19 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import { Code, Server, Cloud, GamepadIcon, Youtube, PenTool } from "lucide-react";
+import { GamepadIcon, Youtube, PenTool, Coffee, Code, Zap } from "lucide-react";
 
 export function AboutSection() {
-  const skills = [
-    { name: "Docker & Kubernetes", level: 85, icon: Server },
-    { name: "AWS/Azure/GCP", level: 80, icon: Cloud },
-    { name: "CI/CD Pipelines", level: 90, icon: Code },
-    { name: "Infrastructure as Code", level: 75, icon: Server },
-    { name: "Monitoring & Logging", level: 80, icon: Code },
-    { name: "Linux Systems", level: 85, icon: Server },
+  const interests = [
+    { name: "Content Creation", icon: Youtube, description: "Tech tutorials and gaming content on YouTube" },
+    { name: "Story-Driven Gaming", icon: GamepadIcon, description: "Cyberpunk, RDR2, GTA, Far Cry, Ghost of Tsushima" },
+    { name: "Technical Writing", icon: PenTool, description: "DevOps insights and learning experiences" },
   ];
 
-  const interests = [
-    { name: "Content Creation", icon: Youtube, description: "Tech tutorials and gaming content" },
-    { name: "Story-Driven Gaming", icon: GamepadIcon, description: "GTA, RDR2, Cyberpunk, COD" },
-    { name: "Technical Writing", icon: PenTool, description: "DevOps blogs and tutorials" },
+  const values = [
+    { name: "Problem Solving", icon: Code, description: "Breaking down complex challenges" },
+    { name: "Continuous Learning", icon: Zap, description: "Always exploring new technologies" },
+    { name: "Quality Focus", icon: Coffee, description: "Attention to detail in every project" },
   ];
 
   return (
@@ -25,15 +21,14 @@ export function AboutSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="gaming-badge mb-4">
-            👨‍💻 About Me
+            👨‍💻 About
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Bridging Code and <span className="text-primary">Creativity</span>
+            Code Meets <span className="text-primary">Creativity</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            As a 2025 graduate stepping into the DevOps world, I bring fresh perspectives, 
-            relentless problem-solving skills, and a passion for automation that matches my 
-            dedication to mastering complex gaming narratives.
+            Fresh DevOps graduate with a passion for automation and storytelling. 
+            I solve problems by day and explore virtual worlds by night.
           </p>
         </div>
 
@@ -43,37 +38,34 @@ export function AboutSection() {
             <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Just like how I approach story-driven games, I believe every system tells a story. 
-                My journey in DevOps started with a simple question: "How can we make deployment 
-                as seamless as loading a saved game?"
+                Every system tells a story. My DevOps journey started with a simple goal: 
+                make deployment as smooth as loading a saved game.
               </p>
               <p>
-                Through my studies and hands-on projects, I've learned that DevOps is more than 
-                just tools and processes – it's about creating reliable, scalable systems that 
-                empower teams to build amazing things.
+                I approach infrastructure like game mechanics - understanding how all the 
+                pieces work together to create something reliable and scalable.
               </p>
               <p>
-                When I'm not automating infrastructure or writing deployment scripts, you'll find 
-                me exploring virtual worlds, creating content for my YouTube channel, or sharing 
-                insights through technical blogs.
+                When not automating workflows, I'm creating content for YouTube, writing 
+                technical blogs, or getting lost in immersive game worlds that inspire my work.
               </p>
             </div>
           </div>
 
-          {/* Interests */}
+          {/* What Drives Me */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold mb-4">Beyond Code</h3>
+            <h3 className="text-2xl font-semibold mb-4">What Drives Me</h3>
             <div className="space-y-4">
-              {interests.map((interest, index) => (
+              {values.map((value, index) => (
                 <Card key={index} className="tech-card">
                   <CardHeader className="pb-3">
                     <CardTitle className="flex items-center text-lg">
-                      <interest.icon className="mr-3 h-5 w-5 text-primary" />
-                      {interest.name}
+                      <value.icon className="mr-3 h-5 w-5 text-primary" />
+                      {value.name}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground text-sm">{interest.description}</p>
+                    <p className="text-muted-foreground text-sm">{value.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -81,23 +73,20 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* Skills */}
+        {/* Interests */}
         <div>
-          <h3 className="text-2xl font-semibold mb-8 text-center">Technical Arsenal</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {skills.map((skill, index) => (
-              <Card key={index} className="tech-card">
+          <h3 className="text-2xl font-semibold mb-8 text-center">Beyond Code</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {interests.map((interest, index) => (
+              <Card key={index} className="tech-card text-center">
                 <CardHeader className="pb-3">
-                  <CardTitle className="flex items-center justify-between text-lg">
-                    <div className="flex items-center">
-                      <skill.icon className="mr-3 h-5 w-5 text-primary" />
-                      {skill.name}
-                    </div>
-                    <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                  </CardTitle>
+                  <div className="mx-auto w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                    <interest.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">{interest.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <Progress value={skill.level} className="h-2" />
+                  <p className="text-muted-foreground text-sm">{interest.description}</p>
                 </CardContent>
               </Card>
             ))}
